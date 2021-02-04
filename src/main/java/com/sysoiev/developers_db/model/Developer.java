@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "developers")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Developers extends BaseEntity {
+public class Developer extends BaseEntity {
 
     @Column(name = "first_name")
     private String firstName;

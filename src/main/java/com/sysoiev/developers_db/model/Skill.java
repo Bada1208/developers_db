@@ -23,5 +23,5 @@ public class Skill extends BaseEntity{
 
     @JsonIgnore
     @ManyToMany(mappedBy = "skills")
-    private List<Developers> developers;
+    private List<Developer> developers;
 }
