@@ -74,15 +74,8 @@ public class SkillServiceImpl implements SkillService {
 
     @Override
     public Skill getById(Long id) {
-        Skill result = skillRepository.findById(id).orElse(null);
-
-        if (result == null) {
-            log.warn("IN getById - no skill found by id: {}", id);
-            return null;
-        }
-
+        Skill result = skillRepository.getOne(id);
         log.info("IN getById - skill: {} found by id: {}", result);
-
         return result;
     }
 

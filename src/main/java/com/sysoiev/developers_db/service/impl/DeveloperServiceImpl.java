@@ -88,12 +88,7 @@ public class DeveloperServiceImpl implements DeveloperService {
 
     @Override
     public Developer getById(Long id) {
-        Developer result = developerRepository.findById(id).orElse(null);
-
-        if (result == null) {
-            log.warn("IN getById - no developer found by id: {}", id);
-            return null;
-        }
+        Developer result = developerRepository.getOne(id);
 
         log.info("IN getById - developer: {} found by id: {}", result);
 

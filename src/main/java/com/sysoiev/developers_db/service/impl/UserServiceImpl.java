@@ -134,12 +134,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getById(Long id) {
-        User result = userRepository.findById(id).orElse(null);
-
-        if (result == null) {
-            log.warn("IN getById - no user found by id: {}", id);
-            return null;
-        }
+        User result = userRepository.getOne(id);
 
         log.info("IN getById - user: {} found by id: {}", result);
 
